@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Sitemap: https://liaddddd.github.io/sitemap.xml
+
+# Disallow sensitive directories
+Disallow: /.git/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /config/ 

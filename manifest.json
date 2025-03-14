@@ -1,0 +1,24 @@
+{
+  "name": "קוונטום טק - פתרונות דיגיטליים חדשניים",
+  "short_name": "קוונטום טק",
+  "start_url": "https://liaddddd.github.io/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope": "/",
+  "description": "קוונטום טק - פתרונות דיגיטליים חדשניים לעסקים",
+  "dir": "rtl",
+  "lang": "he",
+  "categories": ["business", "technology"],
+  "screenshots": []
+} 
