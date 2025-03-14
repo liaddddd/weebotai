@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>קוונטום טק - פתרונות דיגיטליים חדשניים</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>">
+    
+    <!-- Core Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Preload Core JS Libraries -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js" as="script">
+</head>
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="logo-container">
+                <i class="fas fa-atom preloader-icon"></i>
+            </div>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <div class="loading-text">טוען חוויה דיגיטלית מתקדמת...</div>
+        </div>
+    </div>
+
+    <!-- Admin Panel Bubble -->
+    <div class="admin-bubble" id="adminBubble">
+        <i class="fas fa-cog"></i>
+    </div>
+
+    <!-- Side Panels -->
+    <div class="side-panel side-panel-left" id="notificationsPanel">
+        <div class="side-panel-header">
+            <h3 class="side-panel-title"><i class="fas fa-bell-on"></i> עדכונים</h3>
+            <div class="side-panel-close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <div class="side-panel-content">
+            <div class="updates-list">
+                <!-- Updates -->
+                <div class="update-item">
+                    <div class="update-icon"><i class="fas fa-newspaper"></i></div>
+                    <div class="update-content">
+                        <div class="update-title">שדרוג מערכת</div>
+                        <div class="update-text">שדרגנו את מערכת הצ'אט עם יכולות בינה מלאכותית חדשות!</div>
+                        <div class="update-time"><i class="far fa-calendar-alt"></i> 15 במרץ, 2023</div>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-icon"><i class="fas fa-gift"></i></div>
+                    <div class="update-content">
+                        <div class="update-title">מבצע מיוחד לחברים</div>
+                        <div class="update-text">הזמינו חבר והשיגו חודש חינם בתוכנית הפרימיום שלנו!</div>
+                        <div class="update-time"><i class="far fa-calendar-alt"></i> 10 במרץ, 2023</div>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="update-content">
+                        <div class="update-title">פיצ'רים חדשים!</div>
+                        <div class="update-text">הוספנו כלים חדשים לניהול הפרויקטים שלכם. בדקו עכשיו!</div>
+                        <div class="update-time"><i class="far fa-calendar-alt"></i> 5 במרץ, 2023</div>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-icon"><i class="fas fa-users"></i></div>
+                    <div class="update-content">
+                        <div class="update-title">קהילה חדשה</div>
+                        <div class="update-text">השקנו פורום חדש למשתמשים. בואו לשתף ידע וטיפים!</div>
+                        <div class="update-time"><i class="far fa-calendar-alt"></i> 28 בפברואר, 2023</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="side-panel side-panel-right" id="socialLinksPanel">
+        <div class="side-panel-header">
+            <h3 class="side-panel-title"><i class="fas fa-share-alt"></i> עקבו אחרינו</h3>
+            <div class="side-panel-close">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <div class="side-panel-content">
+            <div class="about-site-info">
+                <div class="site-logo-container">
+                    <i class="fas fa-atom logo-icon-small"></i>
+                    <span class="site-name">קוונטום טק</span>
+                </div>
+                <p class="site-description">
+                    אנו מספקים פתרונות טכנולוגיים מתקדמים לעסקים קטנים ובינוניים ברחבי ישראל. עקבו אחרינו ברשתות החברתיות לעדכונים ותוכן בלעדי.
+                </p>
+            </div>
+            
+            <div class="social-links-container">
+                <a href="#" class="social-link youtube">
+                    <i class="fab fa-youtube"></i>
+                    <div class="social-link-content">
+                        <span class="social-link-title">ערוץ YouTube</span>
+                        <span class="social-link-desc">צפו בהדרכות וחדשות</span>
+                        <span class="social-follower-count">42K עוקבים</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="social-link facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <div class="social-link-content">
+                        <span class="social-link-title">עמוד Facebook</span>
+                        <span class="social-link-desc">הצטרפו לקהילה שלנו</span>
+                        <span class="social-follower-count">18K עוקבים</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                    <div class="social-link-content">
+                        <span class="social-link-title">Instagram</span>
+                        <span class="social-link-desc">חוויות ויזואליות</span>
+                        <span class="social-follower-count">25K עוקבים</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="contact-info-mini">
+                <div class="contact-item-mini">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@quantum-tech.co.il</span>
+                </div>
+                <div class="contact-item-mini">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>03-1234567</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mouse Follower -->
+    <div class="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-outline"></div>
+    </div>
+
+    <!-- Background Elements -->
+    <canvas id="gradient-canvas" data-transition-in></canvas>
+    <div class="noise-overlay"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="floating-element-1" data-speed="0.03"><i class="fas fa-microchip"></i></div>
+        <div class="floating-element-2" data-speed="0.05"><i class="fas fa-robot"></i></div>
+        <div class="floating-element-3" data-speed="0.02"><i class="fas fa-brain"></i></div>
+        <div class="floating-element-4" data-speed="0.04"><i class="fas fa-code"></i></div>
+        <div class="floating-element-5" data-speed="0.06"><i class="fas fa-network-wired"></i></div>
+    </div>
+
+    <!-- Chat Button with Ripple Effect -->
+    <div class="chat-button">
+        <div class="ripple"></div>
+        <i class="fas fa-comment-dots"></i>
+        <span class="chat-tooltip">דבר איתנו</span>
+    </div>
+
+    <!-- Chat Container with Glassmorphism -->
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chat-info">
+                <div class="chat-title">צ'אט תמיכה AI</div>
+                <div class="chat-status"><span class="status-dot"></span> זמין כעת</div>
+            </div>
+            <div class="chat-close"><i class="fas fa-times"></i></div>
+        </div>
+        <div class="chat-messages">
+            <div class="bot-message animate__animated animate__fadeIn">
+                <div class="message-time">עכשיו</div>
+                <div class="message-content">שלום! אני העוזר החכם של קוונטום טק. כיצד אוכל לעזור לך היום?</div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" class="chat-input" placeholder="כתוב את ההודעה שלך כאן...">
+            <button class="chat-send">
+                <i class="fas fa-paper-plane"></i>
+                <div class="send-ripple"></div>
+            </button>
+        </div>
+        <div class="chat-footer">
+            <div class="powered-by">מופעל ע"י טכנולוגיית AI מתקדמת</div>
+        </div>
+    </div>
+
+    <!-- Modern Navbar with Glassmorphism -->
+    <header class="navbar-container">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-icon-container">
+                        <i class="fas fa-atom logo-icon"></i>
+                        <div class="logo-particles">
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="logo-text">קוונטום <span>טק</span></div>
+                </a>
+                
+                <div class="nav-links-container">
+                    <ul class="nav-links">
+                        <li class="nav-item"><a href="#hero" class="nav-link active"><span>בית</span></a></li>
+                        <li class="nav-item"><a href="#services" class="nav-link"><span>שירותים</span></a></li>
+                        <li class="nav-item"><a href="#portfolio" class="nav-link"><span>פרויקטים</span></a></li>
+                        <li class="nav-item"><a href="#pricing" class="nav-link"><span>תמחור</span></a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link"><span>צור קשר</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="navbar-right">
+                    <!-- User Account (When not logged in) -->
+                    <div class="user-account">
+                        <button class="login-button" id="login-btn">
+                            <i class="fas fa-user-circle"></i>
+                            <span>התחברות</span>
+                        </button>
+                    </div>
+                    
+                    <!-- User Info (When logged in) -->
+                    <div id="user-info" class="user-info" style="display: none;">
+                        <div class="user-avatar">
+                            <img src="https://via.placeholder.com/32x32" alt="תמונת פרופיל">
+                        </div>
+                        <span id="user-name"></span>
+                        <div class="user-menu">
+                            <a href="#" class="user-menu-item"><i class="fas fa-user-cog"></i> הגדרות</a>
+                            <a href="#" class="user-menu-item"><i class="fas fa-history"></i> היסטוריה</a>
+                            <a href="#" id="logout-button" data-action="logout" class="user-menu-item logout-button"><i class="fas fa-sign-out-alt"></i> התנתק</a>
+                        </div>
+                    </div>
+                    
+                    <button class="cta-button primary-button" id="main-cta">
+                        <i class="fas fa-bolt"></i>
+                        <span>התחברות</span>
+                    </button>
+                    <button class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- מודל אישור התנתקות -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>אישור התנתקות</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>האם אתה בטוח שברצונך להתנתק מהמערכת?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-logout" class="modal-button confirm-button">אישור</button>
+                <button id="cancel-logout" class="modal-button cancel-button">ביטול</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section with Parallax & Animations -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">פתרונות</span>
+                        <span class="highlight-text">דיגיטליים</span>
+                        <span class="animated-text">חדשניים</span>
+                    </h1>
+                    
+                    <div class="hero-subtitle">
+                        <div class="typed-container">
+                            <span class="typed-prefix">אנחנו </span>
+                            <span id="typed-strings">
+                                <span>מפתחים צ'אטבוטים חכמים.</span>
+                                <span>בונים אתרים עוצמתיים.</span>
+                                <span>יוצרים חוויות דיגיטליות.</span>
+                                <span>מחברים בינה מלאכותית לעסקים.</span>
+                                <span>מעצימים את הנוכחות הדיגיטלית שלך.</span>
+                            </span>
+                            <span id="typed-output"></span>
+                        </div>
+                    </div>
+                    
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                        אנחנו בקוונטום טק מתמחים ביצירת פתרונות דיגיטליים מותאמים אישית שמשלבים טכנולוגיה מתקדמת, עיצוב חדשני וחוויית משתמש מעולה. הצוות המקצועי שלנו מחויב להפוך את החזון שלך למציאות ולספק לך יתרון תחרותי בשוק הדיגיטלי.
+                    </p>
+                    
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                        <a href="#contact" class="cta-button glow-button">
+                            <span>קבל הצעת מחיר</span>
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#portfolio" class="outline-button">
+                            <span>לצפייה בעבודות</span>
+                            <i class="fas fa-images"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-badges" data-aos="fade-up" data-aos-delay="800">
+                        <div class="badge">
+                            <div class="badge-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="badge-text"><span class="emphasized">100%</span> מאובטח</div>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="badge-text"><span class="emphasized">מהיר</span> ויעיל</div>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon"><i class="fas fa-headset"></i></div>
+                            <div class="badge-text">תמיכה <span class="emphasized">24/7</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
+                    <div class="hero-device">
+                        <div class="device-mockup">
+                            <div class="device-screen">
+                                <div class="screen-content">
+                                    <div class="ai-chat-interface">
+                                        <div class="chat-interface-header">
+                                            <div class="chat-header-title">
+                                                <div class="ai-avatar">
+                                                    <i class="fas fa-robot"></i>
+                                                </div>
+                                                <div class="ai-info">
+                                                    <div class="ai-name">קוונטום AI</div>
+                                                    <div class="ai-status">פעיל כעת</div>
+                                                </div>
+                                            </div>
+                                            <div class="chat-header-actions">
+                                                <i class="fas fa-ellipsis-v"></i>
+                                            </div>
+                                        </div>
+                                        <div class="chat-interface-body">
+                                            <div class="chat-date-divider">
+                                                <span>היום</span>
+                                            </div>
+                                            <div class="chat-message ai-message">
+                                                <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                                                <div class="message-content">
+                                                    <div class="message-text">שלום! אני העוזר החכם של קוונטום טק. איך אוכל לעזור לך היום?</div>
+                                                    <div class="message-time">10:03</div>
+                                                </div>
+                                            </div>
+                                            <div class="chat-message user-message">
+                                                <div class="message-content">
+                                                    <div class="message-text">היי, אני מעוניין לשמוע על השירותים שלכם לעסקים קטנים</div>
+                                                    <div class="message-time">10:05</div>
+                                                </div>
+                                                <div class="message-avatar"><i class="fas fa-user"></i></div>
+                                            </div>
+                                            <div class="chat-message ai-message">
+                                                <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                                                <div class="message-content">
+                                                    <div class="message-text">בשמחה! לעסקים קטנים אנו מציעים חבילת "צמיחה דיגיטלית" הכוללת:
+                                                    <ul class="message-list">
+                                                        <li>אתר עסקי מותאם למובייל</li>
+                                                        <li>צ'אטבוט AI לשירות לקוחות 24/7</li>
+                                                        <li>אינטגרציה עם רשתות חברתיות</li>
+                                                        <li>דשבורד ניהול פשוט</li>
+                                                    </ul>
+                                                    האם תרצה לשמוע על מחירים?</div>
+                                                    <div class="message-time">10:06</div>
+                                                </div>
+                                            </div>
+                                     
+                                                    </div>
+                                        <div class="chat-interface-footer">
+                                            <div class="chat-input-container">
+                                                <i class="fas fa-paperclip attachment-icon"></i>
+                                                <input type="text" class="chat-input" placeholder="כתוב הודעה...">
+                                                <button class="chat-send-button">
+                                                    <i class="fas fa-paper-plane"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="device-notch"></div>
+                            <div class="device-buttons">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="device-power"></div>
+                        </div>
+                        
+                        <div class="floating-badge">
+                            <div class="badge-content">
+                                <i class="fas fa-award"></i>
+                                <span>מובילים בתחום</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-particles">
+                    <div class="particle p1"></div>
+                    <div class="particle p2"></div>
+                    <div class="particle p3"></div>
+                    <div class="particle p4"></div>
+                    <div class="particle p5"></div>
+                    <div class="particle p6"></div>
+                </div>
+                
+                <div class="ellipse-decoration"></div>
+            </div>
+            
+            <div class="hero-stats-container" data-aos="fade-up">
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" data-count="500">0</div>
+                        <div class="stat-label">לקוחות מרוצים</div>
+                        <svg class="stat-circle" viewBox="0 0 36 36">
+                            <path class="stat-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="stat-circle-fill" stroke-dasharray="92, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-value" data-count="98">0</div>
+                        <span class="stat-percentage">%</span>
+                        <div class="stat-label">שביעות רצון</div>
+                        <svg class="stat-circle" viewBox="0 0 36 36">
+                            <path class="stat-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="stat-circle-fill" stroke-dasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-value special">24/7</div>
+                        <div class="stat-label">תמיכה ושירות</div>
+                        <svg class="stat-circle" viewBox="0 0 36 36">
+                            <path class="stat-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="stat-circle-fill" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-value" data-count="150">0</div>
+                        <span class="stat-plus">+</span>
+                        <div class="stat-label">פרויקטים</div>
+                        <svg class="stat-circle" viewBox="0 0 36 36">
+                            <path class="stat-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="stat-circle-fill" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="scroll-prompt">
+                    <span>גלול למטה</span>
+                    <div class="scroll-arrow">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wave Separator -->
+        <div class="wave-separator">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="var(--background-secondary)" fill-opacity="1" d="M0,128L48,144C96,160,192,192,288,202.7C384,213,480,203,576,181.3C672,160,768,128,864,122.7C960,117,1056,139,1152,154.7C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section with Card Hover Effects -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">מה אנחנו מציעים</span>
+                <h2 class="section-title">השירותים <span class="text-gradient">שלנו</span></h2>
+                <p class="section-description">
+                    אנחנו מספקים מגוון רחב של שירותים דיגיטליים כדי לעזור לעסק שלך לצמוח ולהתפתח בעולם הדיגיטלי המודרני.
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card-inner">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                        </div>
+                        <h3 class="service-title">צ'אטבוטים חכמים</h3>
+                        <p class="service-description">
+                            פתרונות צ'אט אוטומטיים מבוססי AI המעניקים מענה מיידי ללקוחות שלך 24/7, מגדילים את שיעורי ההמרה ומשפרים את חוויית הלקוח.
+                        </p>
+                        <div class="service-features">
+                            <div class="feature"><i class="fas fa-check"></i> אינטגרציה עם כל פלטפורמה</div>
+                            <div class="feature"><i class="fas fa-check"></i> למידת מכונה מתקדמת</div>
+                            <div class="feature"><i class="fas fa-check"></i> התאמה אישית מלאה</div>
+                        </div>
+                        <a href="#" class="service-link">
+                            <span>למידע נוסף</span>
+                            <i class="fas fa-long-arrow-alt-left"></i>
+                        </a>
+                    </div>
+                    <div class="service-card-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card-inner">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                        </div>
+                        <h3 class="service-title">אתרים עסקיים</h3>
+                        <p class="service-description">
+                            אתרים מקצועיים, מהירים ומותאמים לנייד עם חווית משתמש מעולה שמושכים לקוחות ומגדילים את הנוכחות המקוונת שלך.
+                        </p>
+                        <div class="service-features">
+                            <div class="feature"><i class="fas fa-check"></i> עיצוב מותאם אישית</div>
+                            <div class="feature"><i class="fas fa-check"></i> אופטימיזציה לקידום אורגני</div>
+                            <div class="feature"><i class="fas fa-check"></i> מערכת ניהול תוכן קלה</div>
+                        </div>
+                        <a href="#" class="service-link">
+                            <span>למידע נוסף</span>
+                            <i class="fas fa-long-arrow-alt-left"></i>
+                        </a>
+                    </div>
+                    <div class="service-card-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card-inner">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <h3 class="service-title">חנויות אונליין</h3>
+                        <p class="service-description">
+                            פלטפורמות מסחר אלקטרוני מתקדמות עם תהליכי רכישה חלקים, ניהול מלאי, ותשלומים מאובטחים להגדלת המכירות שלך.
+                        </p>
+                        <div class="service-features">
+                            <div class="feature"><i class="fas fa-check"></i> ממשק משתמש אינטואיטיבי</div>
+                            <div class="feature"><i class="fas fa-check"></i> אבטחת תשלומים מתקדמת</div>
+                            <div class="feature"><i class="fas fa-check"></i> דוחות וניתוחים מפורטים</div>
+                        </div>
+                        <a href="#" class="service-link">
+                            <span>למידע נוסף</span>
+                            <i class="fas fa-long-arrow-alt-left"></i>
+                        </a>
+                    </div>
+                    <div class="service-card-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card-inner">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                        </div>
+                        <h3 class="service-title">פתרונות AI</h3>
+                        <p class="service-description">
+                            שילוב טכנולוגיות בינה מלאכותית מתקדמות בעסק שלך לאוטומציה של תהליכים, ניתוח נתונים, וקבלת החלטות חכמה.
+                        </p>
+                        <div class="service-features">
+                            <div class="feature"><i class="fas fa-check"></i> עיבוד שפה טבעית</div>
+                            <div class="feature"><i class="fas fa-check"></i> מערכות המלצה חכמות</div>
+                            <div class="feature"><i class="fas fa-check"></i> ניתוח נתונים מתקדם</div>
+                        </div>
+                        <a href="#" class="service-link">
+                            <span>למידע נוסף</span>
+                            <i class="fas fa-long-arrow-alt-left"></i>
+                        </a>
+                    </div>
+                    <div class="service-card-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="services-cta" data-aos="fade-up">
+                <h3 class="cta-text">מחפש פתרון מותאם אישית לצרכים הייחודיים של העסק שלך?</h3>
+                <a href="#contact" class="cta-button glow-button">
+                    <span>יצירת קשר</span>
+                    <i class="fas fa-headset"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section with Filterable Gallery -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">עבודות אחרונות</span>
+                <h2 class="section-title">הפרויקטים <span class="text-gradient">שלנו</span></h2>
+                <p class="section-description">
+                    הנה מבחר מהפרויקטים האחרונים שביצענו. אנו גאים להציג את העבודה שלנו ואת התוצאות שהשגנו עבור לקוחותינו.
+                </p>
+            </div>
+            
+            <div class="portfolio-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">הכל</button>
+                <button class="filter-btn" data-filter="chatbot">צ'אטבוטים</button>
+                <button class="filter-btn" data-filter="website">אתרים</button>
+                <button class="filter-btn" data-filter="ecommerce">חנויות</button>
+                <button class="filter-btn" data-filter="ai">פתרונות AI</button>
+            </div>
+            
+            <div class="portfolio-grid" data-aos="fade-up">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item" data-category="chatbot">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="/api/placeholder/600/400" alt="צ'אטבוט לחברת פיננסים">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-buttons">
+                                    <a href="#" class="portfolio-btn view-project">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-btn project-link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">צ'אטבוט</span>
+                            <h3 class="portfolio-title">צ'אטבוט AI לחברת פיננסים</h3>
+                            <p class="portfolio-description">
+                                פיתחנו צ'אטבוט חכם המסייע ללקוחות בניהול הפיננסים שלהם ומספק תמיכה 24/7.
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="tag">AI</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">Machine Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item" data-category="website">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="/api/placeholder/600/400" alt="אתר לחברת נדל״ן">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-buttons">
+                                    <a href="#" class="portfolio-btn view-project">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-btn project-link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">אתר</span>
+                            <h3 class="portfolio-title">אתר מתקדם לחברת נדל״ן</h3>
+                            <p class="portfolio-description">
+                                בנינו אתר חדשני עם חיפוש דינמי של נכסים, צ'אט תמיכה, וממשק ניהול מתקדם.
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="tag">Responsive</span>
+                                <span class="tag">UX/UI</span>
+                                <span class="tag">CMS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item" data-category="ecommerce">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="/api/placeholder/600/400" alt="חנות אופנה אונליין">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-buttons">
+                                    <a href="#" class="portfolio-btn view-project">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-btn project-link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">חנות</span>
+                            <h3 class="portfolio-title">חנות אופנה אונליין</h3>
+                            <p class="portfolio-description">
+                                פיתחנו חנות אונליין עם ממשק משתמש מודרני, מערכת המלצות אישיות, ותשלומים מאובטחים.
+                            </p>
+                            <div class="portfolio-tags">
+                                <span class="tag">E-commerce</span>
+                                <span class="tag">Payment Gateway</span>
+                                <span class="tag">Inventory</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item" data-category="ai">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="/api/placeholder/600/400" alt="מערכת תחזיות AI">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-buttons">
+                                    <a href="#" class="portfolio-btn view-project">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="#" class="portfolio-btn project-link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+            
+            <div class="portfolio-more" data-aos="fade-up">
+                <a href="#" class="outline-button">
+                    <span>לצפייה בכל הפרויקטים</span>
+                    <i class="fas fa-th-large"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section with Interactive Cards -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">תוכניות מחירים</span>
+                <h2 class="section-title">תמחור <span class="text-gradient">פשוט ושקוף</span></h2>
+                <p class="section-description">
+                    אנו מציעים מגוון תוכניות במחירים תחרותיים המותאמות לצרכים וליכולות של כל עסק.
+                </p>
+            </div>
+            
+            <div class="pricing-toggle" data-aos="fade-up">
+                <span class="toggle-label">חודשי</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">שנתי</span>
+                <span class="toggle-discount">חסכון של 20%</span>
+            </div>
+            
+            <div class="pricing-grid" data-aos="fade-up">
+                <!-- Pricing Card 1 -->
+                <div class="pricing-card starter">
+                    <div class="pricing-card-header">
+                        <div class="pricing-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="pricing-title">בסיסי</h3>
+                        <div class="pricing-price-container">
+                            <div class="pricing-price monthly">
+                                <span class="currency">₪</span>
+                                <span class="amount">999</span>
+                                <span class="period">/חודש</span>
+                            </div>
+                            <div class="pricing-price annually">
+                                <span class="currency">₪</span>
+                                <span class="amount">799</span>
+                                <span class="period">/חודש</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <ul>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>אתר עד 5 עמודים</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>התאמה לנייד</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>אבטחה בסיסית</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>טפסים מובנים</span>
+                            </li>
+                            <li class="unavailable">
+                                <i class="fas fa-times"></i>
+                                <span>צ'אטבוט בסיסי</span>
+                            </li>
+                            <li class="unavailable">
+                                <i class="fas fa-times"></i>
+                                <span>ממשק ניהול מתקדם</span>
+                            </li>
+                            <li class="unavailable">
+                                <i class="fas fa-times"></i>
+                                <span>אינטגרציה עם מערכות CRM</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-footer">
+                        <a href="#contact" class="cta-button outline-button">
+                            <span>התחל עכשיו</span>
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Pricing Card 2 -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">הכי פופולרי</div>
+                    <div class="pricing-card-header">
+                        <div class="pricing-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3 class="pricing-title">פרימיום</h3>
+                        <div class="pricing-price-container">
+                            <div class="pricing-price monthly">
+                                <span class="currency">₪</span>
+                                <span class="amount">2,499</span>
+                                <span class="period">/חודש</span>
+                            </div>
+                            <div class="pricing-price annually">
+                                <span class="currency">₪</span>
+                                <span class="amount">1,999</span>
+                                <span class="period">/חודש</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <ul>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>אתר עד 15 עמודים</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>התאמה לנייד ועיצוב מתקדם</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>אבטחה מתקדמת</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>מערכת ניהול תוכן</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>צ'אטבוט בסיסי</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>אנליטיקה בסיסית</span>
+                            </li>
+                            <li class="unavailable">
+                                <i class="fas fa-times"></i>
+                                <span>פיתוח התאמות מיוחדות</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-footer">
+                        <a href="#contact" class="cta-button glow-button">
+                            <span>בחר תוכנית זו</span>
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Pricing Card 3 -->
+                <div class="pricing-card enterprise">
+                    <div class="pricing-card-header">
+                        <div class="pricing-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="pricing-title">ארגוני</h3>
+                        <div class="pricing-price-container">
+                            <div class="pricing-price monthly">
+                                <span class="currency">₪</span>
+                                <span class="amount">4,999</span>
+                                <span class="period">/חודש</span>
+                            </div>
+                            <div class="pricing-price annually">
+                                <span class="currency">₪</span>
+                                <span class="amount">3,999</span>
+                                <span class="period">/חודש</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-features">
+                        <ul>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>אתר ללא הגבלת עמודים</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>עיצוב פרימיום מותאם אישית</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>אבטחה ברמה גבוהה</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>מערכת ניהול מתקדמת</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>צ'אטבוט AI מתקדם</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>אנליטיקה מתקדמת ודו"חות</span>
+                            </li>
+                            <li class="available">
+                                <i class="fas fa-check"></i>
+                                <span>פיתוח התאמות מיוחדות</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pricing-footer">
+                        <a href="#contact" class="cta-button outline-button">
+                            <span>יצירת קשר</span>
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-faq" data-aos="fade-up">
+                <h3 class="faq-title">יש לך שאלות נוספות?</h3>
+                <p class="faq-text">אנחנו כאן לענות על כל שאלה ולהתאים את הפתרון המושלם עבורך.</p>
+                <a href="#contact" class="outline-button">
+                    <span>שאל אותנו</span>
+                    <i class="fas fa-question-circle"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Interactive Form -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">צור קשר</span>
+                <h2 class="section-title">נשמח <span class="text-gradient">לשמוע ממך</span></h2>
+                <p class="section-description">
+                    השאר את פרטיך ואחד המומחים שלנו יחזור אליך בהקדם עם הצעה מותאמת אישית לעסק שלך.
+                </p>
+            </div>
+            
+
+                
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">שם מלא</label>
+                            <div class="input-container">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="name" name="name" placeholder="השם המלא שלך" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">אימייל</label>
+                            <div class="input-container">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="email" name="email" placeholder="האימייל שלך" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">טלפון</label>
+                            <div class="input-container">
+                                <i class="fas fa-phone input-icon"></i>
+                                <input type="tel" id="phone" name="phone" placeholder="מספר הטלפון שלך" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">סוג השירות</label>
+                            <div class="input-container select-container">
+                                <i class="fas fa-list input-icon"></i>
+                                <select id="service" name="service" required>
+                                    <option value="">בחר שירות</option>
+                                    <option value="chatbot">צ'אטבוט</option>
+                                    <option value="website">אתר עסקי</option>
+                                    <option value="ecommerce">חנות אונליין</option>
+                                    <option value="ai">פתרון AI</option>
+                                    <option value="other">אחר</option>
+                                </select>
+                                <i class="fas fa-chevron-down select-arrow"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">הודעה</label>
+                            <div class="input-container textarea-container">
+                                <i class="fas fa-comment input-icon"></i>
+                                <textarea id="message" name="message" placeholder="כתוב את ההודעה שלך כאן" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="terms" required>
+                                <span class="checkmark"></span>
+                                <span class="checkbox-text">אני מאשר/ת קבלת עדכונים ומבצעים במייל</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="cta-button glow-button">
+                            <span>שליחה</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-waves">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="var(--background-secondary)" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,42.7C672,32,768,32,864,37.3C960,43,1056,53,1152,80C1248,107,1344,149,1392,170.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        </div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-atom logo-icon"></i>
+                        <div class="footer-logo-text">קוונטום טק</div>
+                    </div>
+                    <p class="footer-about-text">
+                        אנחנו מתמחים בפיתוח פתרונות דיגיטליים מתקדמים שמסייעים לעסקים להצליח בעידן הדיגיטלי. הטכנולוגיה והיצירתיות שלנו לשירותך.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column footer-links">
+                    <h3 class="footer-title">קישורים מהירים</h3>
+                    <ul class="footer-menu">
+                        <li><a href="#hero"><i class="fas fa-chevron-left"></i> עמוד הבית</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-left"></i> שירותים</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-left"></i> פרויקטים</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-left"></i> תמחור</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-left"></i> צור קשר</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column footer-services">
+                    <h3 class="footer-title">השירותים שלנו</h3>
+                    <ul class="footer-menu">
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> צ'אטבוטים חכמים</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> אתרים עסקיים</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> חנויות אונליין</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> פתרונות AI</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> אפליקציות מותאמות אישית</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column footer-newsletter">
+                    <h3 class="footer-title">הישארו מעודכנים</h3>
+                    <p class="footer-newsletter-text">
+                        הירשמו לניוזלטר שלנו וקבלו עדכונים, טיפים וחדשות מעולם הטכנולוגיה
+                    </p>
+                    <form class="footer-newsletter-form">
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="האימייל שלך" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2025 קוונטום טק. כל הזכויות שמורות.
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">מדיניות פרטיות</a>
+                    <a href="#">תנאי שימוש</a>
+                    <a href="#">מפת האתר</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal: Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h2 class="modal-title">התחברות</h2>
+                    <p class="modal-subtitle">ברוכים הבאים בחזרה! הזינו את פרטי החשבון שלכם להתחברות</p>
+                </div>
+                
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="login-email">אימייל</label>
+                        <div class="input-container">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="login-email" name="email" placeholder="הזן את האימייל שלך" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">סיסמה</label>
+                        <div class="input-container">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="login-password" name="password" placeholder="הזן את הסיסמה שלך" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="forgot-password">
+                            <a href="#">שכחת סיסמה?</a>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group remember-me">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="remember">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text">זכור אותי</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="auth-button">
+                        <span>התחברות</span>
+                        <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                    
+                    <div class="auth-separator">
+                        <span>או</span>
+                    </div>
+                    
+                    <div class="social-auth">
+                        <button type="button" class="social-auth-btn google">
+                            <i class="fab fa-google"></i>
+                            <span>התחבר עם Google</span>
+                        </button>
+                        <button type="button" class="social-auth-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>התחבר עם Facebook</span>
+                        </button>
+                    </div>
+                    
+                    <div class="auth-footer">
+                        אין לך חשבון? <a href="#" id="register-link">הירשם עכשיו</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Register -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-header">
+                    <h2 class="modal-title">הרשמה</h2>
+                    <p class="modal-subtitle">צור חשבון חדש וקבל גישה לכל השירותים שלנו</p>
+                </div>
+                
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="reg-fullname">שם מלא</label>
+                        <div class="input-container">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="reg-fullname" name="fullname" placeholder="הזן את השם המלא שלך" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-email">אימייל</label>
+                        <div class="input-container">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="reg-email" name="email" placeholder="הזן את האימייל שלך" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reg-password">סיסמה</label>
+                        <div class="input-container">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="reg-password" name="password" placeholder="צור סיסמה" required>
+                            <button type="button" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-progress"></div>
+                            </div>
+                            <span class="strength-text">חוזק הסיסמה: חלש</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group terms-policy">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="terms" required>
+                            <span class="checkmark"></span>
+                            <span class="checkbox-text">אני מסכים/ה ל<a href="#">תנאי השימוש</a> ו<a href="#">מדיניות הפרטיות</a></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="auth-button">
+                        <span>הרשמה</span>
+                        <i class="fas fa-user-plus"></i>
+                    </button>
+                    
+                    <div class="auth-separator">
+                        <span>או</span>
+                    </div>
+                    
+                    <div class="social-auth">
+                        <button type="button" class="social-auth-btn google">
+                            <i class="fab fa-google"></i>
+                            <span>הרשם עם Google</span>
+                        </button>
+                        <button type="button" class="social-auth-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>הרשם עם Facebook</span>
+                        </button>
+                    </div>
+                    
+                    <div class="auth-footer">
+                        כבר יש לך חשבון? <a href="#" id="login-link">התחבר כאן</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="admin-dashboard">
+        <div class="dashboard-sidebar">
+            <div class="dashboard-logo">
+                <i class="fas fa-atom"></i>
+                <span>לוח בקרה</span>
+            </div>
+            
+            <nav class="dashboard-nav">
+                <a href="#" class="nav-item active" data-tab="overview">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>סקירה כללית</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="users">
+                    <i class="fas fa-users"></i>
+                    <span>משתמשים</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="projects">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>פרויקטים</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="analytics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>אנליטיקס</span>
+                </a>
+                <a href="#" class="nav-item" data-tab="settings">
+                    <i class="fas fa-cogs"></i>
+                    <span>הגדרות</span>
+                </a>
+            </nav>
+            
+            <div class="dashboard-footer">
+                <button id="dashboard-close" class="dashboard-close">
+                    <i class="fas fa-arrow-right"></i>
+                    <span>חזרה לאתר</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="dashboard-main">
+            <div class="dashboard-header">
+                <div class="dashboard-title">
+                    <h2>ברוכים הבאים, <span id="admin-name">מנהל</span></h2>
+                    <p>להלן סקירה כללית של הפלטפורמה</p>
+                </div>
+                
+                <div class="dashboard-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="חיפוש...">
+                    </div>
+                    
+                    <div class="notifications">
+                        <div class="notification-icon">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-content">
+                <!-- Overview Tab -->
+                <div class="dashboard-tab active" id="overview-tab">
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon users">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-value">0</h3>
+                                <p class="stat-label">משתמשים</p>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>5.3%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon projects">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-value">0</h3>
+                                <p class="stat-label">פרויקטים</p>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>12.7%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon revenue">
+                                <i class="fas fa-shekel-sign"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-value">0₪</h3>
+                                <p class="stat-label">הכנסות</p>
+                            </div>
+                            <div class="stat-trend up">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>8.2%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon conversion">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-value">0%</h3>
+                                <p class="stat-label">המרות</p>
+                            </div>
+                            <div class="stat-trend down">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>2.1%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3 class="chart-title">הכנסות חודשיות</h3>
+                                <div class="chart-actions">
+                                    <button class="chart-action active" data-period="week">שבוע</button>
+                                    <button class="chart-action" data-period="month">חודש</button>
+                                    <button class="chart-action" data-period="year">שנה</button>
+                                </div>
+                            </div>
+                            <div class="chart-body">
+                                <canvas id="revenueChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h3 class="chart-title">התפלגות שירותים</h3>
+                                <div class="chart-legend">
+                                    <div class="legend-item">
+                                        <span class="legend-color chatbots"></span>
+                                        <span class="legend-text">צ'אטבוטים</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color websites"></span>
+                                        <span class="legend-text">אתרים</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color ecommerce"></span>
+                                        <span class="legend-text">חנויות</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <span class="legend-color ai"></span>
+                                        <span class="legend-text">AI</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chart-body">
+                                <canvas id="servicesChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-activities">
+                        <div class="activities-header">
+                            <h3 class="activities-title">פעילות אחרונה</h3>
+                            <a href="#" class="view-all">לכל הפעילויות</a>
+                        </div>
+                        
+                        <div class="activities-list">
+                            <div class="activity-item">
+                                <div class="activity-icon create">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p class="activity-text"><strong>דוד כהן</strong> יצר פרויקט חדש <a href="#">צ'אטבוט לחברת ביטוח</a></p>
+                                    <p class="activity-time">לפני 2 שעות</p>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon update">
+                                    <i class="fas fa-sync"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p class="activity-text"><strong>מיכל לוי</strong> עדכנה את הסטטוס של <a href="#">אתר לחברת נדל"ן</a> ל"בביצוע"</p>
+                                    <p class="activity-time">לפני 4 שעות</p>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon payment">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p class="activity-text">התקבל תשלום חדש בסך <strong>₪2,499</strong> מ<strong>יוסי אברהם</strong></p>
+                                    <p class="activity-time">לפני יום</p>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon comment">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="activity-details">
+                                    <p class="activity-text"><strong>שרה כהן</strong> הוסיפה תגובה לפרויקט <a href="#">חנות אופנה אונליין</a></p>
+                                    <p class="activity-time">לפני 2 ימים</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other tabs will be implemented similarly -->
+                <div class="dashboard-tab" id="users-tab">
+                    <h2>ניהול משתמשים</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>שם</th>
+                                <th>אימייל</th>
+                                <th>תאריך הרשמה</th>
+                                <th>סטטוס</th>
+                                <th>פעולות</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <!-- User data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.0/countUp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    
+
+    <script src="auth-fix.js"></script>
+    <script src="side-panels-fix.js"></script>
+    <script src="admin-panel.js"></script>
+    <script src="script.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
